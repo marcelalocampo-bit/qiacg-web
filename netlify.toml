@@ -1,5 +1,5 @@
 [build]
-  command = "npm run build && mkdir -p dist/functions && cp -r .netlify/functions-internal/* dist/functions/"
+  command = "npm run build && mkdir -p dist/functions/server && cp -r dist/server/* dist/functions/server/"
   publish = "dist/client"
 
 [functions]
