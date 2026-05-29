@@ -62,7 +62,7 @@ export function SiteHeader() {
             to="/contacto"
             className="inline-flex items-center justify-center rounded-full bg-gradient-gold px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-gold hover:opacity-95 transition"
           >
-            {t("Agenda una reunin", "Book a meeting")}
+            {t("Agenda una reunión", "Book a meeting")}
           </Link>
         </div>
 
@@ -103,7 +103,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex w-fit items-center justify-center rounded-full bg-gradient-gold px-5 py-2.5 text-sm font-medium text-primary-foreground"
             >
-              {t("Agenda una reunin", "Book a meeting")}
+              {t("Agenda una reunión", "Book a meeting")}
             </Link>
           </div>
         </div>
