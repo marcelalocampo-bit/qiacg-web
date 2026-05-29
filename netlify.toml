@@ -6,7 +6,7 @@ redirects = []
 [functions."*"]
 
 [build]
-publish = "C:\\Users\\marce\\.gemini\\antigravity\\playground\\shimmering-aphelion\\codigo pagina\\dist\\client"
+publish = "dist/client"
 publishOrigin = "ui"
 commandOrigin = "ui"
 command = "npm run build"
