@@ -1,9 +1,9 @@
 [build]
-  command = "npm run build"
+  command = "npm run build && mkdir -p dist/functions && cp -r .netlify/functions-internal/* dist/functions/"
   publish = "dist/client"
 
 [functions]
-  directory = ".netlify/functions-internal"
+  directory = "dist/functions"
 
 [[redirects]]
   from = "/*"
