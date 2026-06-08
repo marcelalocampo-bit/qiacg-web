@@ -8,9 +8,9 @@ import { useLanguage } from "@/components/LanguageContext";
 export const Route = createFileRoute("/sobre-nosotros")({
   head: () => ({
     meta: [
-      { title: "Sobre nosotros – QiA Consulting Group" },
+      { title: "Sobre nosotros | QiA Consulting Group" },
       { name: "description", content: "Excelencia, integridad e innovación. Conoce la historia y el liderazgo detrás de QiA Consulting Group." },
-      { property: "og:title", content: "Sobre nosotros – QiA Consulting Group" },
+      { property: "og:title", content: "Sobre nosotros | QiA Consulting Group" },
       { property: "og:description", content: "Excelencia, integridad e innovación en cada proceso." },
     ],
   }),
@@ -24,6 +24,15 @@ function AboutPage() {
     { icon: Award, title: t("Excelencia técnica", "Technical excellence"), desc: t("Estándares ISO y prácticas de auditoría aplicadas con rigor en cada entrega.", "ISO standards and audit practices applied rigorously in every delivery.") },
     { icon: Cpu, title: t("Tecnología e IA", "Technology and AI"), desc: t("Automatización inteligente para simplificar la gestión documental y operativa.", "Intelligent automation to simplify documentary and operational management.") },
     { icon: HeartHandshake, title: t("Aliados estratégicos", "Strategic allies"), desc: t("Acompañamiento cercano y de largo plazo para la sostenibilidad de tu operación.", "Close, long-term support for the sustainability of your operation.") },
+  ];
+
+  // Array de logos de clientes para prueba social
+  const logos = [
+    { name: "A&B Equipos Médicos", src: "/logos/ab-equipos.webp" },
+    { name: "Urgo Medical", src: "/logos/urgo-medical.webp" },
+    { name: "Laboratorios Gerco", src: "/logos/laboratorios-gerco.webp" },
+    { name: "Haifu", src: "/logos/haifu.webp" },
+    { name: "IMEXHS", src: "/logos/imexhs.webp" }
   ];
 
   return (
@@ -91,8 +100,44 @@ function AboutPage() {
         </div>
       </section>
 
+      {/* SOCIAL PROOF */}
+      <section className="py-24 bg-navy-deep border-t border-border/40">
+        <div className="container-x">
+          <Reveal>
+            <div className="text-center max-w-3xl mx-auto mb-16">
+              <h2 className="font-display text-3xl md:text-4xl text-cream mb-6 leading-tight">
+                {t("Confianza respaldada por", "Trust backed by")} <span className="italic text-gradient-gold">{t("resultados", "results")}</span>
+              </h2>
+              <p className="text-muted-foreground text-lg leading-relaxed">
+                {t("QiA Consulting Group es el aliado técnico de empresas líderes en dispositivos médicos, software y tecnología para la salud. Nuestra experiencia garantiza un cumplimiento normativo riguroso y una gestión operativa de vanguardia.", "QiA Consulting Group is the technical ally of leading companies in medical devices, software, and health technology. Our experience guarantees rigorous regulatory compliance and cutting-edge operational management.")}
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={100}>
+            {/* Grid dinámico: 1 col (móviles), 3 col (tablets), 5 col (escritorio) */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 items-center justify-items-center opacity-70">
+              {logos.map((logo) => (
+                <div 
+                  key={logo.name} 
+                  className="w-40 h-24 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:scale-105"
+                >
+                  <img 
+                    src={logo.src} 
+                    /* Atributo Alt reforzado para SEO */
+                    alt={`Logo de cliente ${logo.name} - Consultoría regulatoria y gestión de calidad`}
+                    loading="lazy" /* Optimización de carga nativa */
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* FOUNDER */}
-      <section className="py-24 bg-navy">
+      <section className="py-24 bg-navy border-t border-border/40">
         <div className="container-x grid md:grid-cols-12 gap-12 items-center">
           <Reveal className="md:col-span-5 flex justify-center">
             <div className="relative w-64 h-64 md:w-80 md:h-80">
