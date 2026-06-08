@@ -26,13 +26,13 @@ function AboutPage() {
     { icon: HeartHandshake, title: t("Aliados estratégicos", "Strategic allies"), desc: t("Acompañamiento cercano y de largo plazo para la sostenibilidad de tu operación.", "Close, long-term support for the sustainability of your operation.") },
   ];
 
-  // Array de logos de clientes para prueba social
+  // Array de logos ajustado a tus nombres de archivo originales subidos a public
   const logos = [
-    { name: "A&B Equipos Médicos", src: "/logos/ab-equipos.webp" },
-    { name: "Urgo Medical", src: "/logos/urgo-medical.webp" },
-    { name: "Laboratorios Gerco", src: "/logos/laboratorios-gerco.webp" },
-    { name: "Haifu", src: "/logos/haifu.webp" },
-    { name: "IMEXHS", src: "/logos/imexhs.webp" }
+    { name: "A&B Equipos Médicos", src: "/AB-Equipos-Medicos-Logo-2025.png" },
+    { name: "Urgo Medical", src: "/cropped-URGO_medical_logo_new-1.png" },
+    { name: "Laboratorios Gerco", src: "/laboratorios gerco.png" },
+    { name: "Haifu", src: "/Haifu.png" },
+    { name: "IMEXHS", src: "/imexhs_logo.webp" }
   ];
 
   return (
@@ -115,7 +115,6 @@ function AboutPage() {
           </Reveal>
 
           <Reveal delay={100}>
-            {/* Grid dinámico: 1 col (móviles), 3 col (tablets), 5 col (escritorio) */}
             <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-10 items-center justify-items-center opacity-70">
               {logos.map((logo) => (
                 <div 
@@ -124,9 +123,8 @@ function AboutPage() {
                 >
                   <img 
                     src={logo.src} 
-                    /* Atributo Alt reforzado para SEO */
                     alt={`Logo de cliente ${logo.name} - Consultoría regulatoria y gestión de calidad`}
-                    loading="lazy" /* Optimización de carga nativa */
+                    loading="lazy"
                     className="max-w-full max-h-full object-contain"
                   />
                 </div>
