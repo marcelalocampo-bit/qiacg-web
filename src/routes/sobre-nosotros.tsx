@@ -5,6 +5,13 @@ import sady from "@/assets/sady-lopez.png";
 import { Award, Cpu, HeartHandshake, ArrowUpRight } from "lucide-react";
 import { useLanguage } from "@/components/LanguageContext";
 
+// Importamos los logos directamente desde la ruta donde los subiste en GitHub
+import logoAB from "@/public/AB-Equipos-Medicos-Logo-2025.png";
+import logoUrgo from "@/public/cropped-URGO_medical_logo_new-1.png";
+import logoGerco from "@/public/laboratorios gerco.png";
+import logoHaifu from "@/public/Haifu.png";
+import logoImexhs from "@/public/imexhs_logo.webp";
+
 export const Route = createFileRoute("/sobre-nosotros")({
   head: () => ({
     meta: [
@@ -26,13 +33,13 @@ function AboutPage() {
     { icon: HeartHandshake, title: t("Aliados estratégicos", "Strategic allies"), desc: t("Acompañamiento cercano y de largo plazo para la sostenibilidad de tu operación.", "Close, long-term support for the sustainability of your operation.") },
   ];
 
-  // Array de logos ajustado a tus nombres de archivo originales subidos a public
+  // Array de logos conectado a las importaciones de arriba
   const logos = [
-    { name: "A&B Equipos Médicos", src: "/AB-Equipos-Medicos-Logo-2025.png" },
-    { name: "Urgo Medical", src: "/cropped-URGO_medical_logo_new-1.png" },
-    { name: "Laboratorios Gerco", src: "/laboratorios gerco.png" },
-    { name: "Haifu", src: "/Haifu.png" },
-    { name: "IMEXHS", src: "/imexhs_logo.webp" }
+    { name: "A&B Equipos Médicos", src: logoAB },
+    { name: "Urgo Medical", src: logoUrgo },
+    { name: "Laboratorios Gerco", src: logoGerco },
+    { name: "Haifu", src: logoHaifu },
+    { name: "IMEXHS", src: logoImexhs }
   ];
 
   return (
